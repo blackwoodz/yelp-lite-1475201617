@@ -1,0 +1,55 @@
+<!-- Validation failure messages -->
+<% if @owner_response.errors.any? %>
+  <% @owner_response.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Add Owner Response</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_owner_response" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for response -->
+      <div class="form-group">
+        <label for="response" class="control-label">
+          Response
+        </label>
+
+        <input type="text" id="response" name="response" placeholder="Response" class="form-control" value="<%= @owner_response.response %>">
+      </div>
+
+      <!-- Label and input for review_id -->
+      <div class="form-group">
+        <label for="review_id" class="control-label">
+          Review
+        </label>
+
+        <input type="text" id="review_id" name="review_id" placeholder="Review" class="form-control" value="<%= @owner_response.review_id %>">
+      </div>
+
+      <!-- Label and input for ownership_id -->
+      <div class="form-group">
+        <label for="ownership_id" class="control-label">
+          Ownership
+        </label>
+
+        <input type="text" id="ownership_id" name="ownership_id" placeholder="Ownership" class="form-control" value="<%= @owner_response.ownership_id %>">
+      </div>
+
+      <button class="btn btn-success">
+        Create Owner Response
+      </button>
+      or
+      <a href="/owner_responses">Cancel</a>
+    </form>
+  </div>
+</div>

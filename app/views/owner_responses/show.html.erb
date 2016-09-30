@@ -1,0 +1,31 @@
+<div class="page-header">
+  <h3>Owner Response #<%= @owner_response.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <dl class="dl-horizontal">
+      <dt>Response</dt>
+      <dd><%= @owner_response.response %></dd>
+
+      <dt>Review</dt>
+      <dd><%= @owner_response.review_id %></dd>
+
+      <dt>Ownership</dt>
+      <dd><%= @owner_response.ownership_id %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/owner_responses" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/owner_responses/<%= @owner_response.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_owner_response/<%= @owner_response.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>

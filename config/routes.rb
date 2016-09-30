@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Owner_response resource:
+  # CREATE
+  get "/owner_responses/new", :controller => "owner_responses", :action => "new"
+  post "/create_owner_response", :controller => "owner_responses", :action => "create"
+
+  # READ
+  get "/owner_responses", :controller => "owner_responses", :action => "index"
+  get "/owner_responses/:id", :controller => "owner_responses", :action => "show"
+
+  # UPDATE
+  get "/owner_responses/:id/edit", :controller => "owner_responses", :action => "edit"
+  post "/update_owner_response/:id", :controller => "owner_responses", :action => "update"
+
+  # DELETE
+  get "/delete_owner_response/:id", :controller => "owner_responses", :action => "destroy"
+  #------------------------------
+
   # Routes for the Ownership resource:
   # CREATE
   get "/ownerships/new", :controller => "ownerships", :action => "new"
